@@ -116,14 +116,14 @@ h1 {
 
 .schedule {
   width: 100%;
-  min-width: 720px;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .schedule th,
 .schedule td {
   border-bottom: 1px solid #ededed;
-  padding: 12px;
+  padding: 10px 8px;
 }
 
 .schedule thead th {
@@ -134,7 +134,11 @@ h1 {
 
 .schedule thead th:first-child {
   text-align: left;
-  width: 150px;
+  width: 100px;
+}
+
+.schedule thead th:nth-child(n + 2) {
+  width: calc((100% - 100px) / 3);
 }
 
 .date-cell {
@@ -415,7 +419,7 @@ h1 {
 
   .schedule th,
   .schedule td {
-    padding: 9px 6px;
+    padding: 7px 5px;
   }
 
   .chip {
@@ -493,10 +497,6 @@ h1 {
   <header>
 
     <h1>WG ToDos</h1>
-
-    <div class="subtitle">
-      Wer macht was?
-    </div>
 
     <div
       id="status"
@@ -801,15 +801,16 @@ function dateKey(date) {
 
 function formatDate(date) {
 
-  return new Intl.DateTimeFormat(
+  const formatted = new Intl.DateTimeFormat(
     "de-DE",
     {
       weekday: "short",
       day: "2-digit",
-      month: "2-digit",
-      year: "numeric"
+      month: "2-digit"
     }
   ).format(date);
+
+  return `${formatted}`;
 }
 
 
