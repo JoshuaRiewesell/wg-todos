@@ -419,7 +419,7 @@ h1 {
 
   .schedule th,
   .schedule td {
-    padding: 7px 5px;
+    padding: 7px;
   }
 
   .chip {
@@ -659,12 +659,12 @@ const PEOPLE = [
 /*
  * Startdatum:
  *
- * Dienstag, 13.10.2026
+ * Dienstag, 27.10.2026
  */
 const START_DATE = new Date(
   2026,
   9,
-  13
+  27
 );
 
 
@@ -720,16 +720,38 @@ const TASKS = [
     label: "Staubsaugen",
     icon: `
       <svg viewBox="0 0 24 24">
-        <path d="M8 3h6"/>
-        <path d="M10 3v7"/>
-        <path d="M10 10h4"/>
-        <path d="M14 10
-                 c3 0 5 2 5 5v4"/>
-        <path d="M7 10
-                 c-2 1-3 3-3 6v2"/>
-        <path d="M4 18h6"/>
-        <circle cx="17" cy="19" r="2"/>
-      </svg>
+      <!-- Canister body -->
+      <path d="M5 15.5V12
+               a4 4 0 0 1 4-4h2
+               a4 4 0 0 1 4 4v3.5
+               a2 2 0 0 1-2 2H8"/>
+
+      <!-- Large top handle -->
+      <path d="M6.5 8V6
+               a1.8 1.8 0 0 1 1.8-1.8h2.4
+               A1.8 1.8 0 0 1 12.5 6v2"/>
+
+      <!-- Wheel -->
+      <circle cx="6.5" cy="17" r="2.5"/>
+      <circle cx="6.5" cy="17" r="0.8"/>
+
+      <!-- Flexible hose -->
+      <path d="M14.5 12
+               C17.5 10.8 18 8.5 16.8 6.5
+               C15.8 5 15.5 4.3 16 3.5
+               C16.8 2.1 19 2.5 19 4
+               C19 4.5 18.8 4.8 18.5 5"/>
+
+      <!-- Wand -->
+      <path d="M17.8 4.5l1.5 12"/>
+
+      <!-- Floor nozzle -->
+      <path d="M17.2 16.5
+               h2.3
+               a1.5 1.5 0 0 1 1.5 1.5v.8
+               H15.8V18
+               a1.5 1.5 0 0 1 1.4-1.5Z"/>
+    </svg>
     `
   }
 ];
